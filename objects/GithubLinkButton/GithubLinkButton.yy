@@ -1,0 +1,41 @@
+{
+  "spriteId": {
+    "name": "sprGithub",
+    "path": "sprites/sprGithub/sprGithub.yy",
+  },
+  "solid": false,
+  "visible": true,
+  "spriteMaskId": null,
+  "persistent": false,
+  "parentObjectId": {
+    "name": "_baseLinkButton",
+    "path": "objects/_baseLinkButton/_baseLinkButton.yy",
+  },
+  "physicsObject": false,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsGroup": 1,
+  "physicsDensity": 0.5,
+  "physicsRestitution": 0.1,
+  "physicsLinearDamping": 0.1,
+  "physicsAngularDamping": 0.1,
+  "physicsFriction": 0.2,
+  "physicsStartAwake": true,
+  "physicsKinematic": false,
+  "physicsShapePoints": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
+  "properties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"url","path":"objects/_baseLinkButton/_baseLinkButton.yy",},"objectId":{"name":"_baseLinkButton","path":"objects/_baseLinkButton/_baseLinkButton.yy",},"value":"\"https://github.com/Grisgram/gjam-22-death\"","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
+  "parent": {
+    "name": "main",
+    "path": "folders/Objects/main.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "GithubLinkButton",
+  "tags": [],
+  "resourceType": "GMObject",
+}

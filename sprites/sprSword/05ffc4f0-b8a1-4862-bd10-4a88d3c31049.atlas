@@ -1,0 +1,7 @@
+pickup_sword.png
+size:256,64
+filter:Linear,Linear
+sword
+bounds:0,0,59,138
+offsets:1,1,61,140
+rotate:90

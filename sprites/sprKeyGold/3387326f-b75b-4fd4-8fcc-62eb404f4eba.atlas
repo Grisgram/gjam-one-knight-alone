@@ -1,0 +1,12 @@
+pickup_key.png
+size:512,128
+filter:Linear,Linear
+key_bronze
+bounds:0,0,149,128
+offsets:1,1,151,130
+key_gold
+bounds:149,0,149,128
+offsets:1,1,151,130
+key_silver
+bounds:298,0,149,128
+offsets:1,1,151,130

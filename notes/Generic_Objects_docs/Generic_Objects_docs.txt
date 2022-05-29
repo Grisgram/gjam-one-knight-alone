@@ -1,0 +1,15 @@
+Saveable
+========
+
+The Saveable object is a base object, containing function prototypes you may override (redefine),
+and also two user events that get invoked before data is written on save and after it has been loaded.
+It acts as a base class for all objects that shall be contained in a save game.
+In the Tools folder you find a script name Savegame. This script contains functions that iterate
+over all "Saveable" objects and create a json structure of them.
+
+NOTE: Saving Saveable objects to a file can always iterate only over the current room and persistant objects!
+
+Global variables are available if you need to test, whether a load or save operation is currently in progress:
+SAVEGAME_SAVE_IN_PROGRESS
+SAVEGAME_LOAD_IN_PROGRESS
+Both are boolean and only true while the named operation runs.

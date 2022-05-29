@@ -1,0 +1,98 @@
+{
+	"map_fields": {
+		"loot_count" : 1,
+		"items" : {
+			"exit": 			{"type" : "ExitField",			"always" : 1,	"unique" : 1,	"enabled" : 1,	"chance" : 1.0,  "attributes" : { "type": "LevelExit", },},
+			"anvil": 			{"type" : "AnvilField",			"always" : 1,	"unique" : 1,	"enabled" : 1,	"chance" : 20.0, "attributes" : { "type": "Anvil", },},
+			"empty": 			{"type" : "EmptyField",			"always" : 1,	"unique" : 0,	"enabled" : 1,	"chance" : 30.0,},
+			"monster": 			{"type" : "=monster_spawns",	"always" : 1,	"unique" : 0,	"enabled" : 1,	"chance" : 35.0,},
+			"trap": 			{"type" : "=trap_spawns",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0,},
+			"treasure": 		{"type" : "=treasure_spawns",	"always" : 1,	"unique" : 0,	"enabled" : 1,	"chance" : 25.0,},
+		},
+	},
+	"monster_spawns": {
+		"loot_count" : 1,
+		"items" : {
+			"vampire": 			{"type" : "MonsterField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "type": "Vampire", },},
+			"bat": 				{"type" : "MonsterField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "type": "Bat", },},
+			"skeleton": 		{"type" : "MonsterField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "type": "Skeleton", },},
+			"zombie": 			{"type" : "MonsterField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "type": "Zombie", },},
+		},
+	},
+	"trap_spawns": {
+		"loot_count" : 1,
+		"items" : {
+			"single": 			{"type" : "TrapSingleField",	"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 75.0, "attributes" : { "type": "SingleTrap", },},
+			"double": 			{"type" : "TrapDoubleField",	"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 25.0, "attributes" : { "type": "DoubleTrap", },},
+		},
+	},
+	"treasure_spawns": {
+		"loot_count" : 1,
+		"items" : {
+			"barrel": 			{"type" : "TreasureField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "type": "Barrel", 	"contents":"barrel_contents", },},
+			"silver_chest": 	{"type" : "TreasureField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "type": "SilverChest","contents":"silver_contents", },},
+			"gold_chest": 		{"type" : "TreasureField",		"always" : 0,	"unique" : 0,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "type": "GoldChest", 	"contents":"gold_contents", },},
+		},
+	},
+	
+	
+	"barrel_contents": {
+		"loot_count" : 1,
+		"items" : {
+			"empty": 			{"type" : "<null>",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 50.0, },
+			"health_small": 	{"type" : "HealthPotion",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 15.0, "attributes" : { "value": 20, },},
+			"shield_small": 	{"type" : "ShieldBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 15.0, "attributes" : { "value": 20, },},
+			"weapon_small": 	{"type" : "WeaponBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 15.0, "attributes" : { "value": 20, },},
+			"xp_small": 		{"type" : "XPBuff",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 20.0, "attributes" : { "value": 10, },},
+			"health_medium": 	{"type" : "HealthPotion",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  2.0, "attributes" : { "value": 40, },},
+			"shield_medium": 	{"type" : "ShieldBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  2.0, "attributes" : { "value": 40, },},
+			"weapon_medium": 	{"type" : "WeaponBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  2.0, "attributes" : { "value": 40, },},
+			"xp_medium": 		{"type" : "XPBuff",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  3.0, "attributes" : { "value": 20, },},
+		},
+	},
+	"silver_contents": {
+		"loot_count" : 3,
+		"items" : {
+			"empty": 			{"type" : "<null>",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 40.0, },
+			"empty2": 			{"type" : "<null>",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 10.0, },
+			"health_small": 	{"type" : "HealthPotion",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 20, },},
+			"shield_small": 	{"type" : "ShieldBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 20, },},
+			"weapon_small": 	{"type" : "WeaponBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 20, },},
+			"xp_small": 		{"type" : "XPBuff",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "value": 10, },},
+			"health_medium": 	{"type" : "HealthPotion",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 20.0, "attributes" : { "value": 40, },},
+			"shield_medium": 	{"type" : "ShieldBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 20.0, "attributes" : { "value": 40, },},
+			"weapon_medium": 	{"type" : "WeaponBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 20.0, "attributes" : { "value": 40, },},
+			"xp_medium": 		{"type" : "XPBuff",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 30.0, "attributes" : { "value": 20, },},
+		},
+	},
+	"gold_contents": {
+		"loot_count" : 3,
+		"items" : {
+			"health_medium": 	{"type" : "HealthPotion",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 40, },},
+			"shield_medium": 	{"type" : "ShieldBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 40, },},
+			"weapon_medium": 	{"type" : "WeaponBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 40, },},
+			"xp_medium": 		{"type" : "XPBuff",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 10.0, "attributes" : { "value": 20, },},
+			"health_large": 	{"type" : "HealthPotion",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 25.0, "attributes" : { "value": 80, },},
+			"shield_large": 	{"type" : "ShieldBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 25.0, "attributes" : { "value": 80, },},
+			"weapon_large": 	{"type" : "WeaponBuff",			"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 30.0, "attributes" : { "value": 80, },},
+			"xp_large": 		{"type" : "XPBuff",				"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 40.0, "attributes" : { "value": 35, },},
+		},
+	},
+
+	"anvil_repair": {
+		"loot_count" : 1,
+		"items" : {
+			"repair_1": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value": 1, "message":"player_strings/anvil_repair_weak" },},
+			"repair_2": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 15.0, "attributes" : { "value": 2, "message":"player_strings/anvil_repair_weak" },},
+			"repair_3": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 35.0, "attributes" : { "value": 3, "message":"player_strings/anvil_repair_weak" },},
+			"repair_4": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 35.0, "attributes" : { "value": 4, "message":"player_strings/anvil_repair_ok" },},
+			"repair_5": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 30.0, "attributes" : { "value": 5, "message":"player_strings/anvil_repair_ok" },},
+			"repair_6": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 25.0, "attributes" : { "value": 6, "message":"player_strings/anvil_repair_ok" },},
+			"repair_7": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 25.0, "attributes" : { "value": 7, "message":"player_strings/anvil_repair_ok" },},
+			"repair_8": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 20.0, "attributes" : { "value": 8, "message":"player_strings/anvil_repair_good" },},
+			"repair_9": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" : 15.0, "attributes" : { "value": 9, "message":"player_strings/anvil_repair_good" },},
+			"repair_10": 		{"type" : "SwordRepair",		"always" : 0,	"unique" : 1,	"enabled" : 1,	"chance" :  5.0, "attributes" : { "value":10, "message":"player_strings/anvil_repair_good" },},
+		},
+	},
+	
+}

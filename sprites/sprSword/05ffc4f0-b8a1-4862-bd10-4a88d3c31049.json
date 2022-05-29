@@ -1,0 +1,51 @@
+{
+"skeleton": { "hash": "1FTMFt55SaE", "spine": "4.0.45", "x": -38.51, "y": -57.32, "width": 85.02, "height": 148.64 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "sword", "parent": "root" }
+],
+"slots": [
+	{ "name": "sword", "bone": "sword", "attachment": "sword" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"sword": {
+				"sword": { "x": 4, "y": 17, "rotation": -10.29, "width": 61, "height": 140 }
+			}
+		}
+	}
+],
+"animations": {
+	"pickup": {
+		"bones": {
+			"sword": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.8 }
+				],
+				"translate": [
+					{
+						"curve": [ 0.111, 0, 0.289, 0, 0.153, 0, 0.247, -6.74 ]
+					},
+					{
+						"time": 0.4,
+						"y": -6.96,
+						"curve": [ 0.511, 0, 0.689, 0, 0.545, -7.16, 0.657, 0 ]
+					},
+					{ "time": 0.8 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.8 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.8 }
+				]
+			}
+		}
+	}
+}
+}

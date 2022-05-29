@@ -1,0 +1,99 @@
+{
+	"legal" : {
+		"game_name"		: "enter-game-name-here",
+		"company"		: "indievidualgames.com",
+		"copyright" 	: "(c)2022 indievidualgames.com",
+		"locale_author" : "Mike Barthold aka Haerion Coldrock aka Grisgram",
+		"developer" 	: "Mike Barthold aka Haerion Coldrock aka Grisgram",
+	},
+	
+	"credits" : {
+		"credits_title" : "Credits",
+		"credits_text"	: "[c_danger][shake]CREDITS[/]\nFirst of all, credits to [c_danger]@JujuAdams & contributors[/] for the [c_danger]scribble[/] library,\nand to all the great and helpful members at the [c_danger]GameMaker Kitchen Discord[/].\nThank you all!\nThe Assets of the dungeon and the knight were taken from the\nfree asset pack [c_danger]Fantasy Platformer[/] by [c_danger]YoYoGames[/].\nThanks! Your assets are amazing!\nThe monsters (Bat, Zombie, Skeleton and Vampire) are used under\nCC-BY License from user [c_danger]irmirx[/] from [c_danger]OpenGameArt.org[/]. Thank you!\nIf I manage to add sounds, they will also be taken from the free asset pack\nfrom [c_danger]YoYoGames[/].\n\nThank you all for your great resources!\n[c_danger][shake]Mike[/]\n",
+	},
+	
+	"global_words" : {
+		"buttons" : {
+			"ok" 		: "OK",
+			"apply" 	: "Apply",
+			"cancel" 	: "Cancel",
+			"yes" 		: "Yes",
+			"no" 		: "No",
+			"save" 		: "Save",
+			"retry" 	: "Retry",
+			"ignore" 	: "Ignore",
+			"undo" 		: "Undo",
+			"back" 		: "Back",
+			"continue" 	: "Continue",
+		},
+		
+		"keyboard" : {
+			"shift" 	: "Shift",
+			"ctrl" 		: "Ctrl",
+			"alt" 		: "Alt",
+		},
+	},
+
+	"player_strings": {
+		"too_far_away"		: "Too far away...",
+		"loot_empty"		: "Empty... [c_danger][shake]*gnaarrrggh*[/]",
+		"level_up"			: "[sprXP] [c_lgreen]Level up![/]",
+		"already_used"		: "I already used that!",
+		"anvil_no_sword"	: "I have no sword...",
+		"anvil_max_sword"	: "My sword is already perfect!",
+		"anvil_repair_weak"	: "Hmmm... better than nothing...",
+		"anvil_repair_ok"	: "That will do it for a while...",
+		"anvil_repair_good"	: "Perfect! Blacksmiths' finest!",
+		"exit_locked"		: "Monsters...Treasures... So much left to do...",
+		"exit_unlocked"		: "What was that *click*? A door has opened...",
+		
+		"chest_unlocked"	: {
+			"chest_unlock_1"	: "[scale,1.5][shake][c_lgreen]Ha! Gotcha!",
+			"chest_unlock_2"	: "[scale,1.5][shake][c_lgreen]...aaaaand click-a-click!",
+			"chest_unlock_3"	: "[scale,1.5][shake][c_lgreen]Turn left...turn right...open!",
+			"chest_unlock_4"	: "[scale,1.5][shake][c_lgreen]I'm so excited!",
+		},
+		
+		"trap_curses": {
+			"trap_field_1"		: "[scale,1.5][shake][c_danger]It's a trap!",
+			"trap_field_2"		: "[scale,1.5][shake][c_danger]That'll hurt...",
+			"trap_field_3"		: "[scale,1.5][shake][c_danger]Why me? WHY ALWAYS ME???",
+			"trap_field_4"		: "[scale,1.5][shake][c_danger]O'Rly? Here? Oh my...",
+		},
+		
+		"key_found": {
+			"key_found_1"		: "[scale,1.5][shake][c_lgreen]Look! A key!",
+			"key_found_2"		: "[scale,1.5][shake][c_lgreen]Thanks for holding the key for me!",
+			"key_found_3"		: "[scale,1.5][shake][c_lgreen]For every lock, there's a ... k-e-y!",
+			"key_found_4"		: "[scale,1.5][shake][c_lgreen]Got the key!",
+		},
+	},
+	
+	"monster_strings": {
+	},
+	
+	"play_strings": {
+		"level_start"		: "[fa_middle][fa_center][scale,2.0][shake][ci_white]Level [c_danger]{0}\n{1}",
+		"main_menu"			: "Accept Death",
+		"score_title"		: "Score",
+		"level_number"		: "Level {0}",
+		"remaining_title"	: "Remaining",
+		"cant_loot"			: "It's locked!",
+		"already_looted"	: "I already took it all...",
+		"level_exit"		: "Click the portal to leave the level",
+		"chest_locked"		: "[{0}] [ci_bright]Locked[/]",
+		"game_over_win"		: "[fa_middle][fa_center]The [c_yellow]sun[/] rises...\n[shake]You stumble out of the castle[/]...\ninto the light of day...",
+		"game_over_lose"	: "[fa_middle][fa_center][scale,1.5][c_danger]The undead feast upon your corpse!\nDeath is just the beginning...\nYou will rise as one of them...\n[shake]awaiting the next adventurer...[/]",
+		"time_tooltip"		: "Leave this level before the hour is over\n or the undead will feast upon your corpse!",
+		"monster_tooltip"	: "[acme28out][fa_middle][fa_center][c_danger]{0}\n[ci_white]Level [ci_accent]{1}\n[ci_white]Will inflict [ci_accent]{2} [ci_white]damage\n[/]{3} {4} {5}",
+		"exit_title"		: "[acme12]Exit",
+		"exit_to_main"		: "[acme28out]Abort game and return to main menu?",
+	},
+
+	"intro_strings": {
+		"storyline"			: "[fa_top][fa_left][c_danger]\"You need to stay just for one night,\nbut you must enter alone.\nTreasure beyond imagination await you,\nand... other... things... might await you, too.\nCome in and find out!\"\n\n[ci_white]The cloaked man spread his arm with an inviting gesture\ntowards the entrance portal of the castle...\nWith loud rattle and squeaking the drawbridge lowers\nin front of my feet.\n\nAnd so I accepted the challenge, unsure, what I just committed.\nBut I am a knight. Brave. Unbreakable.\nAND I wear a golden armor! [c_danger][shake]So, what can happen?",
+		"play_button"		: "[scale,2][c_danger][shake]PLAY[/][acme12](If you dare)",
+		"no_sounds"			: "There wasn't enough time to add sounds,\nI focussed on the game and random dungeon\nand loot and monsters and levels\nand...and...and...",
+	},
+
+}
