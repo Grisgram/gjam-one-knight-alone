@@ -21,7 +21,7 @@ function onGameStart() {
 	DEBUG_MODE_ACTIVE			= true;
 	DEBUG_MODE_WINDOW_WIDTH		= 1280;
 	DEBUG_MODE_WINDOW_HEIGHT	= 720;
-
+	
 	// set up named colors for the game
 	set_app_theme(ci_theme.rising);
 

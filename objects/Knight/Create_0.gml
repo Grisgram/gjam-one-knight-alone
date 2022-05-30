@@ -7,6 +7,7 @@ actor_data = GAME.player_data;
 avatar_sprite = sprKnightArmedIdle;
 base_sprite_name = "sprKnightArmed";
 is_armed = true;
+level_up_pending = false;
 
 spawn_xoffset = -0.25;
 
@@ -38,6 +39,7 @@ set_armed = function() {
 }
 
 move = function(movex, movey, run) {
+	actor_data.kill_floating();
 	states.data.map_move_target.set(movex, movey);
 	states.data.move_target.set(
 		(ROOM_ARENA_LEFT + 2 * movex + 1 + spawn_xoffset) * MAP_FIELD_SIZE,
@@ -52,7 +54,7 @@ die_through_time = function() {
 receive_keys = function(monster_keys) {
 	if (array_length(monster_keys) == 0) return;
 	
-	floating_text(self, LG("player_strings/key_found*"),,-sprite_height/2,120,0.5);
+	floating_text(self, LG("player_strings/key_found*"),,PLAYER_CHAT_OFFSET_Y * 2,120,2.5);
 	for (var i = 0; i < array_length(monster_keys); i++) {
 		array_push(actor_data.keys, monster_keys[@ i]);
 		actor_data.value_changed = true;
@@ -67,7 +69,7 @@ unlock_chest = function(chestname) {
 		with (k.target_object) 
 			toname = MY_NAME;
 		if (chestname == toname) {
-			floating_text(self, LG("player_strings/chest_unlocked*"),,-sprite_height/2,120,0.5);
+			floating_text(self, LG("player_strings/chest_unlocked*"),,PLAYER_CHAT_OFFSET_Y * 2,120,2.5);
 			with (k.target_object) 
 				states.set_state("opening");
 			break;
@@ -127,6 +129,10 @@ states
 )
 .add_state("idle",
 	function() {
+		if (level_up_pending) {
+			level_up_pending = false;
+			return "level_up";
+		}
 		sprite_index = asset_get_index(base_sprite_name + "Idle");
 		image_index = 0;
 		image_speed = 1;
@@ -259,20 +265,13 @@ states
 	function(data) {
 		data.xstart = x;
 		data.animation_end = false;
-		sprite_index = sprKnightAttackDeadly;
 		image_index = 0;
-		hspeed = -1.25;
 		image_xscale = abs(image_xscale);
-		new Animation(self, 0, 30, acPlayerHeal).set_scale_is_relative(true);
+		new Animation(self, 0, 60, acPlayerHeal).set_scale_is_relative(true)
+			.add_finished_trigger(function() {
+				states.set_state("idle");
+			});
 		floating_text(self, LG("player_strings/level_up"),,-96,,,c_white);
-	},
-	function(data) {
-		if (data.animation_end) {
-			data.animation_end = false;
-			x = data.xstart;
-			hspeed = 0;
-			return "idle";
-		}
 	}
 )
 .add_state("spawn",
@@ -310,6 +309,7 @@ states
 )
 .add_state("spawn_enter_room",
 	function(data) {
+		actor_data.keys = [];
 		sprite_index = asset_get_index(base_sprite_name + "Run");
 		image_index = 0;
 		image_speed = 1;

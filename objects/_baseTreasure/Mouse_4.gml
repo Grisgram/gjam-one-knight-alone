@@ -11,7 +11,9 @@ if (field.map_coords.is_same_as_player()) {
 		case "locked":
 			var mn = MY_NAME;
 			with (GAME.player_object) {
-				if (!unlock_chest(mn))
+				if (GAME.player_data.has_key_for(mn))
+					unlock_chest(mn);
+				else
 					floating_text(GAME.player_object, LG("play_strings/cant_loot"),,PLAYER_CHAT_OFFSET_Y); 
 			}
 			break;

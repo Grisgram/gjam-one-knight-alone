@@ -5,8 +5,10 @@
 */
 
 #macro TOOLTIP_INSTANCES		global.__tooltip_instances
+#macro TOOLTIP_LAYER			global.__tooltip_layer
 
-TOOLTIP_INSTANCES = {};
+TOOLTIP_INSTANCES	= {};
+TOOLTIP_LAYER		= undefined;
 
 /// @function					tooltip_get_instance(tooltip_object_index)
 /// @description				get or create a new instance for a tooltip
@@ -19,7 +21,7 @@ function tooltip_get_instance(tooltip_object_index) {
 		inst = variable_struct_get(TOOLTIP_INSTANCES, ttname);
 	else {
 		log(MY_NAME + sprintf(": Creating new tooltip instance: tooltip='{0}';", ttname));
-		inst = instance_create_layer(x, y, layer, tooltip_object_index);
+		inst = instance_create_layer(x, y, TOOLTIP_LAYER ?? layer, tooltip_object_index);
 		inst.visible = false;
 		variable_struct_set(TOOLTIP_INSTANCES, ttname, inst);
 	}
@@ -36,7 +38,8 @@ function tooltip_get_instance(tooltip_object_index) {
 function tooltip_show(tooltip_object_index, tooltip_text, delay_frames = -1, for_object = self) {
 	var inst = tooltip_get_instance(tooltip_object_index);
 	with (inst) {
-		depth = for_object.depth - 1;
+		if (TOOLTIP_LAYER == undefined)
+			depth = for_object.depth - 1;
 		if (font_to_use == "undefined" && variable_instance_exists(for_object, "font_to_use")) 
 			font_to_use = for_object.font_to_use;
 		text = tooltip_text;

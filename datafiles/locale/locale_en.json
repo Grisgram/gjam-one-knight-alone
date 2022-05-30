@@ -39,7 +39,7 @@
 		"loot_empty"		: "Empty... [c_danger][shake]*gnaarrrggh*[/]",
 		"level_up"			: "[sprXP] [c_lgreen]Level up![/]",
 		"already_used"		: "I already used that!",
-		"anvil_no_sword"	: "I have no sword...",
+		"anvil_no_sword"	: "I have no sword... Let's make one!",
 		"anvil_max_sword"	: "My sword is already perfect!",
 		"anvil_repair_weak"	: "Hmmm... better than nothing...",
 		"anvil_repair_ok"	: "That will do it for a while...",
@@ -73,7 +73,7 @@
 	},
 	
 	"play_strings": {
-		"level_start"		: "[fa_middle][fa_center][scale,2.0][shake][ci_white]Level [c_danger]{0}\n{1}",
+		"level_start"		: "[fa_middle][fa_center][scale,2.0][shake][ci_white]Level [c_danger]{0}\n[c_danger][shake]Exit before the hour ends!\n{1}",
 		"main_menu"			: "Accept Death",
 		"score_title"		: "Score",
 		"level_number"		: "Level {0}",
@@ -85,7 +85,8 @@
 		"game_over_win"		: "[fa_middle][fa_center]The [c_yellow]sun[/] rises...\n[shake]You stumble out of the castle[/]...\ninto the light of day...",
 		"game_over_lose"	: "[fa_middle][fa_center][scale,1.5][c_danger]The undead feast upon your corpse!\nDeath is just the beginning...\nYou will rise as one of them...\n[shake]awaiting the next adventurer...[/]",
 		"time_tooltip"		: "Leave this level before the hour is over\n or the undead will feast upon your corpse!",
-		"monster_tooltip"	: "[acme28out][fa_middle][fa_center][c_danger]{0}\n[ci_white]Level [ci_accent]{1}\n[ci_white]Will inflict [ci_accent]{2} [ci_white]damage\n[/]{3} {4} {5}",
+		"monster_tooltip"	: "[acme28out][fa_middle][fa_center][c_danger]{0}\n[ci_white]Level [ci_accent]{1}\n[ci_white]Will inflict [ci_accent]{2} [ci_white]damage\n[/]{3} {4} {5}{6}",
+		"first_strike"		: "\n[acme28out][c_danger][shake]Strikes first!",
 		"exit_title"		: "[acme12]Exit",
 		"exit_to_main"		: "[acme28out]Abort game and return to main menu?",
 	},

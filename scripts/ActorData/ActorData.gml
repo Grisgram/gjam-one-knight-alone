@@ -24,6 +24,8 @@ function ActorData(_owner) constructor {
 	value_string_shield = "";
 	value_string_weapon = "";
 	
+	__txt		= undefined;
+	
 	static __setup_all_value_strings = function() {
 		value_string_hp		= get_value_string(hp, sprHeartValues);
 		value_string_weapon = get_value_string(weapon, sprSwordValues);
@@ -36,10 +38,32 @@ function ActorData(_owner) constructor {
 		
 		var ico = icon == undefined ? "" : sprintf("[{0}]", (is_string(icon) ? icon : sprite_get_name(icon)));
 		var msgtext = sprintf("[scale,1.3]{0} {1}{2}[/]", ico, value > 0 ? "[c_lgreen]+" : "[c_red]", floor(value));
-		floating_text(owner, msgtext, 
-			random_range(PLAYER_CHAT_OFFSET_X    , PLAYER_CHAT_OFFSET_X * 2), 
-			random_range(PLAYER_CHAT_OFFSET_Y / 2, PLAYER_CHAT_OFFSET_Y * 2), 
-			random_range(90, 150), 0);
+		//floating_text(owner, msgtext, PLAYER_CHAT_OFFSET_X, PLAYER_CHAT_OFFSET_Y / 2, 120, -1);
+		if (__txt == undefined || !instance_exists(__txt) ||  __txt.anim.__finished) {
+			__txt = floating_text(owner, msgtext, PLAYER_CHAT_OFFSET_X, PLAYER_CHAT_OFFSET_Y / 2, 120, 1,,false);
+		} else {
+			with (__txt) {
+				anim.duration += 120;
+				text += "\n" + msgtext;
+				var sa = string_split(text, "\n");
+				if (array_length(sa) > 3) {
+					text = "";
+					for (var i = array_length(sa) - 4; i < array_length(sa); i++)
+						text += sa[i] + "\n";
+				}
+			}
+		}
+	}
+	
+	static kill_floating = function() {
+		if (__txt == undefined || !instance_exists(__txt))
+			return;
+		with (__txt) {
+			text = "";
+			anim.abort();
+			instance_destroy();
+			__txt = undefined;
+		}
 	}
 
 	static is_alive = function() {
@@ -56,6 +80,20 @@ function ActorData(_owner) constructor {
 
 	static is_attack_deadly = function(dmg) {
 		return dmg >= hp + shield;
+	}
+
+	static has_key_for = function(chestname) {
+		for (var i = 0; i < array_length(keys); i++) {
+			var k = keys[@ i];
+			var toname;
+			with (k.target_object) 
+				toname = MY_NAME;
+			if (chestname == toname) {
+				return true;
+				break;
+			}
+		}
+		return false;
 	}
 
 	/// @function change_hp(change, from_trap)

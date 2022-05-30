@@ -7,6 +7,7 @@ states.add_state("using",
 	function(data) {
 		if (GAME.player_data.weapon == 0) {
 			floating_text(GAME.player_object, LG("player_strings/anvil_no_sword"),,PLAYER_CHAT_OFFSET_Y);
+			GAME.player_data.change_weapon(1);
 			change_state_in(self, states, 60, "usable");
 		} else if (GAME.player_data.weapon == GAME.player_data.max_weapon) {
 			floating_text(GAME.player_object, LG("player_strings/anvil_max_sword"),,PLAYER_CHAT_OFFSET_Y);

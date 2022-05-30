@@ -16,13 +16,13 @@ function MonsterData(_owner) : ActorData(_owner) constructor {
 			weapon = floor(GAME.level_number / 2);
 			shield = max(0, GAME.level_number - 2);
 			base_damage = 1 + floor(GAME.level_number / 3);
-			priority	= 1;
+			priority	= GAME.level_number < 6 ? 1 : 3;
 			break;
 		case "Vampire":
-			hp = 3 + GAME.level_number;
+			hp = 3 + max(0, GAME.level_number - 3);
 			weapon = 0;
 			shield = floor(GAME.level_number / 2);
-			base_damage = 2 + ceil(GAME.level_number / 3);
+			base_damage = 2 + floor(GAME.level_number / 4);
 			priority	= 3;
 			break;
 		case "Zombie":
@@ -51,7 +51,8 @@ function MonsterData(_owner) : ActorData(_owner) constructor {
 
 	get_tooltip_text = function() {
 		return sprintf(LG("play_strings/monster_tooltip"),
-			monster_name, level, get_damage_dealt(), value_string_hp, value_string_shield, value_string_weapon);
+			monster_name, level, get_damage_dealt(), value_string_hp, value_string_shield, value_string_weapon,
+			priority > 2 ? LG("play_strings/first_strike") : "");
 	}
 
 }

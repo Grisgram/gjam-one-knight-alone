@@ -6,6 +6,8 @@ event_inherited();
 #macro PLAY_PARTICLES	global.play_particles
 PLAY_PARTICLES = new ParticleManager(LAYER_EFFECTS);
 
+TOOLTIP_LAYER = "UI_Floating";
+
 remainings_changed = false;
 ticker_anim = undefined;
 

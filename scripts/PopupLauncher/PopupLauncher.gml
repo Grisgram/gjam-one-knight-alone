@@ -7,7 +7,7 @@ function create_level_start_popup() {
 	with (wnd) {
 		image_blend = APP_THEME_BLACK;
 		show_text(sprintf(LG("play_strings/level_start"), GAME.level_number, GAME.time_data.get_level_time_frame_string()));
-		new Animation(self, 150, 30, acLinearAlphaOut)
+		new Animation(self, 150, 150, acLinearAlphaOut)
 			.add_finished_trigger(function() {
 				hide_popup();
 				instance_destroy(global.running_popup);

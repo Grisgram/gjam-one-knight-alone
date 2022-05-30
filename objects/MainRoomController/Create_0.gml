@@ -1,5 +1,7 @@
 /// @description animation chain background
 
+TOOLTIP_LAYER = undefined;
+
 #macro LAYER_BG_SPRITES		"background_sprites"
 // Inherit the parent event
 event_inherited();
@@ -28,7 +30,7 @@ with (ROOMCONTROLLER.background_sprites[@ 0]) {
 		.add_finished_trigger(function() {
 			log("FADE IN 1");
 			with (ROOMCONTROLLER.background_sprites[@ 1]) {
-				animation_run(self, 0, 180, acLinearAlphaIn)
+				animation_run(self, 0, 180, acMainBackImage_0_05)
 					.add_finished_trigger(function() {
 						log("FADE OUT 0+1");
 						with (ROOMCONTROLLER.background_sprites[@ 0]) {

@@ -82,14 +82,19 @@ function PlayerData(_owner) : ActorData(_owner) constructor {
 	static perform_level_up = function() {
 		xp_to_next = floor(xp_to_next * 1.2);
 		level++;
-		max_hp++;
-		max_shield++;
-		max_weapon++;
-		base_damage++;
-		shield = min(shield, max_shield / 2);
-		weapon = min(weapon, max_weapon / 2);
+		var inc = 1 + ceil(GAME.level_number / 3);
+		max_hp += inc;
+		max_shield += inc;
+		max_weapon += inc;
+		base_damage += inc;
+		shield = min(shield, max(max_shield / 2, max_shield * GAME.level_number / 4));
+		weapon = min(weapon, max(max_weapon / 2, max_weapon * GAME.level_number / 4));
 		hp = max(hp, max_hp);
-		with(GAME.player_object)
-			states.set_state("level_up");
+		with(GAME.player_object) {
+			if (states.active_state.name == "idle")
+				states.set_state("level_up");
+			else
+				level_up_pending = true;
+		}
 	}
 }

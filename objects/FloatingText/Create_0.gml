@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+anim = undefined;
 align_to = undefined;
 xoff = 0;
 
