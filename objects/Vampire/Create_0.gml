@@ -34,7 +34,7 @@ states
 	function(data) {
 		if (data.animation_end) {
 			// TODO: Dust explosion
-			explosion_start_scaled_to(sprSmokeMediumGrey69x73, LAYER_EFFECTS, sprite_width, sprite_height);
+			explosion_start_scaled_to(sprDeathAnim, LAYER_EFFECTS, sprite_width, sprite_height);
 			var k = actor_data.keys;
 			with (GAME.player_object) receive_keys(k);
 			ROOMCONTROLLER.remainings_changed = true;

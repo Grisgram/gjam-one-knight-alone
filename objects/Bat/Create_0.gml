@@ -44,7 +44,7 @@ states
 		var despawn_anim = data[$ "despawn_anim"] ?? 
 			new Animation(self, 0, 90, acLinearAlphaOut)
 				.add_finished_trigger(function() { 
-					explosion_start_scaled_to(sprSmokeMediumGrey69x73, LAYER_EFFECTS, sprite_width, sprite_height);
+					explosion_start_scaled_to(sprDeathAnim, LAYER_EFFECTS, sprite_width, sprite_height);
 					ROOMCONTROLLER.remainings_changed = true;
 					instance_destroy(); 
 				});
