@@ -205,8 +205,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "sprites",
-    "path": "folders/_packages_/explosions/sprites.yy",
+    "name": "explosions",
+    "path": "folders/_packages_/explosions.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprSmokeMediumGrey69x73",
