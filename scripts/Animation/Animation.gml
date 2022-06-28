@@ -166,7 +166,7 @@ function Animation(_obj_owner, _delay, _duration, _animcurve, _repeats = 1) cons
 	/// @function					set_function(channel_name, _function)
 	/// @description				Assign a function that takes 1 argument (the value) for a channel
 	static set_function = function(channel_name, _function) {
-		self[$ "func_" + channel_name] = _function;
+		self[$ "func_" + channel_name] = method(self, _function);
 		return self;
 	}
 
