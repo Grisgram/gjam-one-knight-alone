@@ -494,7 +494,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/race","resourceVersion":"1.0","name":"map_generator.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.3.0.625",
+    "IDEVersion": "2022.6.0.23",
   },
   "resourceVersion": "1.5",
   "name": "gjam-22-death",
